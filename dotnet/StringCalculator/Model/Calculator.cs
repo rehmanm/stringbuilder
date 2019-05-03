@@ -17,10 +17,6 @@ namespace Model
             string[] separators = GetSeperatorsTuple.Item1;
             int startIndexOf = GetSeperatorsTuple.Item2;
 
-            foreach (string str in separators) {
-                Console.WriteLine($"seperators: {str} - {separators.Length}");
-            }
-
             foreach (string str in numbers.Substring(startIndexOf).Split(separators, StringSplitOptions.None)) {
                 
                 int currentNumber = 0;
@@ -49,8 +45,7 @@ namespace Model
                 seperatorIndexOf = numbers.IndexOf("\n");
 
                 string extractSeperators = numbers.Substring(2, seperatorIndexOf-2);
-
-                Console.WriteLine(extractSeperators);
+                
                 separators = extractSeperators.Split(','); 
 
 
