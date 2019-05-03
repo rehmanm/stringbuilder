@@ -33,6 +33,14 @@ namespace StringCalculator
             Console.WriteLine($"3. {Model.Calculator.Add("//$,@\n1$2@3")}");
             Console.WriteLine($"4. {Model.Calculator.Add("//***,$,@\n1$2@3***4")}");
 
+            Console.WriteLine("Task 4");
+            try
+            {
+                Model.Calculator.Add("-2,5, -3");
+            }
+            catch (NegativeNumberNotAllowedException e) {
+                Console.WriteLine($"1. {e.Message}");
+            }
 
 
 

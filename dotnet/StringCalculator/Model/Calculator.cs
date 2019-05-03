@@ -13,9 +13,12 @@ namespace Model
 
             int result = 0;
 
+            bool raiseNegativeNumberException = false;
+
             var GetSeperatorsTuple = GetSeperators(numbers);
             string[] separators = GetSeperatorsTuple.Item1;
             int startIndexOf = GetSeperatorsTuple.Item2;
+            List<Int32> negativeNumberList = new List<int>();
 
             foreach (string str in numbers.Substring(startIndexOf).Split(separators, StringSplitOptions.None)) {
                 
@@ -26,7 +29,19 @@ namespace Model
                 if (currentNumber > 1000)
                     continue;
 
+                if (currentNumber < 0)
+                {
+                    raiseNegativeNumberException = true;
+                    negativeNumberList.Add(currentNumber);
+                }
+
                 result += currentNumber;
+
+            }
+
+            if (raiseNegativeNumberException) {
+
+                throw new NegativeNumberNotAllowedException(negativeNumberList);
 
             }
 

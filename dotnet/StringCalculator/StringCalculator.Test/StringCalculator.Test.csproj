@@ -54,6 +54,7 @@
     <Compile Include="Task2.cs" />
     <Compile Include="Task3.cs" />
     <Compile Include="BonusTask.cs" />
+    <Compile Include="Task4.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
